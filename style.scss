@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+h1{
+    padding: 10px;
+    color: rgb(219, 219, 219);
+    font-family: 'Lobster', cursive;
+    @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 65%, rgba(0,212,255,1) 100%);
+}
+
+.all{
+    text-align: center;
+}
+
+.albumsWrap{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family:  'Mansalva', cursive;
+    h4{
+        background-color: Black;
+        color: white;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        width: 200px;
+        padding: 5px 0 5px 0;
+        box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+    }
+    img{
+        width: 200px;
+        box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    .one:hover{
+        h4{
+            margin: 30px 0 0 0 ;
+        }
+    }
+}
+
+
+
+//MEDIAQ//
+
+@media only screen and (min-width: 576px){
+   .albumsWrap{
+       display: flex;
+       flex-flow: row;
+   }
+
+   .one{
+    margin: 10px;
+}
+}
+@media only screen and (min-width: 768px){
+    .albumsWrap{
+        display: flex;
+        flex-flow: column;
+    }
+
+
+    .wrapOne{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        width: auto;
+    }
+
+    .wrapTwo{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        width: auto;
+    }
+
+    .one{
+        margin: 10px;
+    }
+}
+@media only screen and (min-width: 992px){
+    
+}
+@media only screen and (min-width: 1200px){
+
+}
+@media only screen and (min-width: 1600px){
+    
+}
