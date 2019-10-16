@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   background: radial-gradient(circle, #020024 0%, #090979 35%, #00d4ff 100%);
+  background: linear-gradient(45deg, #000000 0%, #144D73 50%, #000000 100%);
 }
 
 h1 {
@@ -13,7 +14,81 @@ h1 {
   color: #dbdbdb;
   font-family: 'Lobster', cursive;
   background: #020024;
-  background: radial-gradient(circle, #020024 0%, #090979 65%, #00d4ff 100%);
+  border-bottom: 4px solid lightblue;
+  border-top: 4px solid lightblue;
+  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(50%, #144D73), to(#000000));
+  background: linear-gradient(to right, #000000 0%, #144D73 50%, #000000 100%);
+}
+
+.header {
+  height: 50%;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 10px;
+  font-family: 'Mansalva', cursive;
+  color: #ffffff;
+  font-size: 20px;
+  margin: 5px;
+  width: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000), color-stop(0%, #217EBD), to(#000000));
+  background: linear-gradient(to bottom, #000000 0%, #217EBD 0%, #000000 100%);
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    moz-transform: rotateY(0deg);
+    ms-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+    moz-transform: rotateY(360deg);
+    ms-transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+
+.navbar a:hover {
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  -webkit-animation-name: spin;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+  -webkit-box-shadow: 0px 13px 15px 0px #000000;
+          box-shadow: 0px 13px 15px 0px #000000;
+  border: 2px lightblue inset;
 }
 
 .all {
@@ -50,15 +125,45 @@ h1 {
 
 .albumsWrap img {
   width: 200px;
-  -webkit-box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.65);
+          box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.65);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   margin-bottom: 20px;
 }
 
+.albumsWrap .fa-play-circle {
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.albumsWrap .one a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
 .albumsWrap .one:hover h4 {
   margin: 30px 0 0 0;
+  border-top: 2px solid red;
+}
+
+.albumsWrap .one:hover .fa-play-circle {
+  display: block;
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.705);
+}
+
+.albumsWrap .one:hover img {
+  border-bottom: 2px solid red;
 }
 
 @media only screen and (min-width: 576px) {
@@ -73,6 +178,15 @@ h1 {
   }
   .one {
     margin: 10px;
+  }
+  .navbar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
+  .navbar a {
+    width: auto;
   }
 }
 
