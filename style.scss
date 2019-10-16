@@ -4,7 +4,6 @@
 body{
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     background: linear-gradient(45deg, #000000 0%, #144D73 50%, #000000 100%);
 }
 
@@ -22,6 +21,11 @@ h1{
 
 .header{
     height: 50%;
+    background:linear-gradient(to right, #000000 0%, #144D73 50%, #000000 100%);
+    border-bottom: 4px solid lightblue;
+    border-top: 4px solid lightblue;
+    display: none;
+
 }
 .navbar{
     display: flex;
@@ -36,8 +40,9 @@ h1{
         font-family:  'Mansalva', cursive;
         color: #ffffff;
         font-size: 20px;
-        margin: 5px;
+        margin: 20px 5px 0 5px ;
         width: 50%;
+        
         background: linear-gradient(to bottom, #000000 0%, #217EBD 0%, #000000 100%);
 }
         
@@ -73,6 +78,8 @@ h1{
         box-shadow: 0px 13px 15px 0px #000000;
 
         border: 2px lightblue inset;
+
+        color: red;
     }
 }
 
@@ -112,8 +119,12 @@ h1{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity .3s;
     
+    
+    }
+
+    .one:hover{
+        transition: opacity .3s;
     }
     .one{
         a{
@@ -126,8 +137,12 @@ h1{
     .one:hover{
         h4{
             margin: 30px 0 0 0 ;
-            border-top: 2px solid rgb(255, 0, 0);
+            border-top: 4px solid #000000;
+            border-left: 4px solid #000000;
+            border-right: 4px solid #000000;
+             color: red;
 
+            transition: border .7s;
         }
 
         .fa-play-circle{
@@ -136,8 +151,10 @@ h1{
             color: rgba(255, 255, 255, 0.705);
             }
             img{
-                border-bottom: 2px solid rgb(255, 0, 0);
-
+                border-bottom: 4px solid #000000;
+                border-left: 4px solid #000000;
+                border-right: 4px solid #000000;
+                transition: border .7s;
             }
            
     }
@@ -153,11 +170,19 @@ h1{
    .albumsWrap{
        display: flex;
        flex-flow: row;
-       
    }
 
    .one{
     margin: 10px;
+}
+
+.headerTwo{
+    display: none;
+}
+
+.header{
+    display: block;
+
 }
 
 .navbar{

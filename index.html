@@ -6,28 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Schijven</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/56830efb7d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="blotter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/liquidDistortMaterial.min.js"></script>
+    
 </head>
 <body>
 
 <div class="all">
-    <div class="header">
-        <h1>Albums en artiesten</h1>
+    <div class="header" id="header">
+        
 
-        <div class="navbar">
+        <script>
+        
+                var text = new Blotter.Text("Artiesten", {
+                    size: 50,
+                    fill: "#fff",
+                    paddingLeft: 15,
+                    paddingRight: 15,
+                    paddingTop: 15,
+                    paddingBottom: 15
+                })
+        
+                var material = new Blotter.LiquidDistortMaterial();
+                material.uniforms.uVolatility.value = 0.03;
+                material.uniforms.uSeed.value = 0; 
+                material.uniforms.uSpeed.value = .4;
+        
+                var blotter = new Blotter(material, {
+                    texts: text
+                })
+        
+                var scope = blotter.forText(text);
+        
+                scope.appendTo(document.getElementById('header'));
+
+                // document.onmousemove = moveIt;
+                // function moveIt(event){
+
+                // material.uniforms.uRotation.value = (event.clientX * .2); 
+
+
+                // }
+        
+        </script>
+</div>
+                <div class="headerTwo">
+                        <h1>Artiesten</h1>
+
+                </div>
+    
+
+
+
+    <div class="navbar">
 
             
-                <a href="">Home</a>
-                <a href="">Contact</a>
-                <a href="">News</a>
-                <a href="">Artiesten</a>
-                <a href="">Beats</a>
-            
-
-        </div>
+            <a href="">Home</a>
+            <a href="">Contact</a>
+            <a href="">News</a>
+            <a href="">Beats</a>
+        
 
     </div>
+
         <div class="albumsWrap">
             <div class="wrapOne">
                     <div class="one">
